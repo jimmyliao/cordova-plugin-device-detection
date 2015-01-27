@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="uk.co.ilee.jailbreakdetection" version="0.1.0">
+    <name>Device JailBreak/Root Detection</name>
+    <author>Jimmy (http://about.me/jimmyliao)</author>
+    <description>Cordova / PhoneGap Plugin for detecting if the device running the app is jailbroken or rooted.</description>
+    <keywords>cordova, jailbreak, jailbroken, cydia, detection, detector, root, rooted</keywords>
+    <license>MIT</license>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <js-module src="www/inc/deviceDetection/js/deviceDetection.js" name="deviceDetection">
+        <clobbers target="deviceDetection" />
+    </js-module>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="deviceDetection">
+              <param name="android-package" value="net.jimmyliao.mobile.plugin.deviceDetection" />
+              <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <source-file src="src/net/jimmyliao/mobile/plugin/deviceDetection.java" />
+        <header-file src="src/net/jimmyliao/mobile/plugin/Root.java" />
+        <source-file src="src/net/jimmyliao/mobile/plugin/ExecShell.java" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="deviceDetection">
+                <param name="ios-package" value="deviceDetection" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/JailbreakDetection.h" />
+        <source-file src="src/ios/JailbreakDetection.m" />
+    </platform>
+</plugin>
