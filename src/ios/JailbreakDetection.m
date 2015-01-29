@@ -2,7 +2,7 @@
 //  JailbreakDetection.m
 //  Copyright (c) 2014 Lee Crossley - http://ilee.co.uk
 //  Techniques from http://highaltitudehacks.com/2013/12/17/ios-application-security-part-24-jailbreak-detection-and-evasion/
-//
+
 
 #import "Cordova/CDV.h"
 #import "Cordova/CDVViewController.h"

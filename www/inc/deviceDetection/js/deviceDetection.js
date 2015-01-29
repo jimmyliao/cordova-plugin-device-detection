@@ -18,4 +18,5 @@ deviceDetection.install = function () {
     return window.plugins.deviceDetection;
 };
 
-cordova.addConstructor(deviceDetection.install);
+//2015.01.29 For some reasons, you have to add constructor by yourself
+//cordova.addConstructor(deviceDetection.install);
